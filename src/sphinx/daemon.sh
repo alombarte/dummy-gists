@@ -4,7 +4,7 @@
 # Simple script to (re)index, start or stop Sphinx
 #
 SPHINX_PATH=/var/lib/sphinx/bin
-SPHINX_CONFIG=/var/lib/sphinx/demo.conf
+SPHINX_CONFIG=/var/lib/sphinx/etc/demo.conf
 
 ACTION=$1
 

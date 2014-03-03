@@ -6,6 +6,8 @@ clear
 echo "NOTE: Running without root permissions might fail. Press a key to continue or Ctrl-C to abort."
 read keypress
 
+mkdir -p $SPHINX_DIR/{data,run,log,etc}
+cp demo.conf $SPHINX_DIR/etc
 
 cd /tmp
 wget http://sphinxsearch.com/files/sphinx-$SPHINX_RELEASE-release.tar.gz
@@ -16,8 +18,7 @@ tar xvzf libstemmer_c.tgz && cp -rfp libstemmer_c/* sphinx-$SPHINX_RELEASE-relea
 
 cd sphinx-$SPHINX_RELEASE-release
 ./configure --with-mysql --prefix=$SPHINX_DIR --with-libstemmer
-# make -j4 install   # Multicore machines
 make install
+mv api $SPHINX_DIR/
 
-mkdir $SPHINX_DIR/{data,run,log}
-cp demo.conf $SPHINX_DIR/
+
