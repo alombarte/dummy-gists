@@ -2,10 +2,12 @@
 SPHINX_RELEASE="2.1.6"
 SPHINX_DIR="/var/lib/sphinx"
 
+
 clear
-echo "NOTE: Running without root permissions might fail. Press a key to continue or Ctrl-C to abort."
+echo "HELLO STUDENT! If you are running this script without root permissions (e.g: using 'sudo') the installation will fail. Press a key to continue or Ctrl-C to abort."
 read keypress
 
+sudo yum -y install mysql-devel
 mkdir -p $SPHINX_DIR/{data,run,log,etc}
 cp demo.conf $SPHINX_DIR/etc
 
