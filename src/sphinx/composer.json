@@ -1,0 +1,5 @@
+{
+  "require": {
+    "gigablah/sphinxphp": "^2.0"
+  }
+}
